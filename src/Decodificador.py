@@ -3,9 +3,7 @@ from ttkbootstrap import Style
 import json
 import re
 import sys
-import keyword
 from os.path import dirname, join
-
 from Sistema import Sistema
 
 
@@ -21,6 +19,9 @@ class Decodificador:
         print('Classe:Login - exibirTela')
         # self.encontrar.exibirTela()
         self.editor.exibirTela()
+    def codificarParaPortoPy(self, codigo):
+        return self.codificacao(codigo, compilacao=False)
+
     def codificadorParaPython(self, codigo):
         return self.codificacao(codigo, compilacao=True)
 
@@ -99,7 +100,7 @@ class Decodificador:
                         else:
                             a = comandos[x][0]+' '
                         script2 = re.sub(r"\b" +comandos[x][1]+r'\s', a, script2)
-            comandos = obj['dir']
+            comandos = obj['embutidas']
             for x in range(len(comandos)):
                 if not comp:
                     #Python para portoPy
@@ -107,14 +108,20 @@ class Decodificador:
                 else:
                     #portoPy para Python
                     script2 = re.sub(r"\b" + comandos[x][1] + r"\b", comandos[x][0], script2)
-            comandos = obj['listas']
+            comandos = []
+            listas = obj['listas']
+            for x in range(len(listas)):
+                comandos.append(listas[x])
+            string = obj['string']
+            for x in range(len(string)):
+                comandos.append(string[x])
             for x in range(len(comandos)):
                 if not comp:
                     #Python para portoPy
-                    script2 = re.sub(r"." + comandos[x][0] + r"\b", "."+comandos[x][1], script2)
+                    script2 = re.sub(r"" + comandos[x][0] + r"\b", ""+comandos[x][1], script2)
                 else:
                     #portoPy para Python
-                    script2 = re.sub(r"." + comandos[x][1] + r"\b", "."+comandos[x][0], script2)
+                    script2 = re.sub(r"" + comandos[x][1] + r"\b", ""+comandos[x][0], script2)
             return script2
 
 if __name__ == '__main__':

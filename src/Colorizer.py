@@ -55,10 +55,27 @@ def make_pat():
         ]) +
         r"))"
     )
-    codsdois = dir(builtins)
-    comandos = obj['dir']
+    codsdois = [dir(builtins)]
+    comandos = obj['erros']
     for x in range(len(comandos)):
         codsdois.append(comandos[x][1])
+        codsdois.append(comandos[x][0])
+    comandos = obj['especiais']
+    for x in range(len(comandos)):
+        codsdois.append(comandos[x][1])
+        codsdois.append(comandos[x][0])
+    comandos = obj['listas']
+    for x in range(len(comandos)):
+        codsdois.append(comandos[x][1])
+        codsdois.append(comandos[x][0])
+    comandos = obj['string']
+    for x in range(len(comandos)):
+        codsdois.append(comandos[x][1])
+        codsdois.append(comandos[x][0])
+    comandos = obj['embutidas']
+    for x in range(len(comandos)):
+        codsdois.append(comandos[x][1])
+        codsdois.append(comandos[x][0])
     builtinlist = [str(name) for name in codsdois
                    if name not in keyword.kwlist]
     builtin = r"([^.'\"\\#]\b|^)" + any("BUILTIN", builtinlist) + r"\b"
@@ -376,7 +393,6 @@ class ColorDelegator(Delegator):
 def _color_delegator(parent):  # htest #
     print(parent)
     from tkinter import Toplevel, Text
-    from idlelib.idle_test.test_colorizer import source
     from idlelib.percolator import Percolator
 
     top = Toplevel(parent)

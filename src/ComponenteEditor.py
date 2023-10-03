@@ -1,16 +1,10 @@
 import tkinter as tk
 from tkinter.font import BOLD
-from idlelib.idle_test.test_colorizer import source
 from idlelib.percolator import Percolator
 from ttkbootstrap import Style
-import socketio
-
-try:
-    from .Colorizer import *
-except:
-    from Colorizer import *
-
+from Colorizer import *
 import tkinter as tk
+from tkinter import scrolledtext
 
 
 # This is a scrollable text widget
@@ -44,40 +38,43 @@ class Editor:
         self.text.bind("<Button-1>", self.numberLines.redraw)
         self.scrollbar.bind("<Button-1>", self.onScrollPress)
         self.text.bind("<MouseWheel>", self.onPressDelay)
-        """  
-        def enviar(event):
-            master.after(1, lambda: OnKeyPress())
 
-        self.text.bind("<KeyPress>", enviar)
-        # conexão
+         # Associações de atalhos de teclado
+        self.text.bind("<Control-z>", self.undo)
+        self.text.bind("<Control-Shift-Z>", self.redo)
 
-        self.sio = socketio.Client()
+        # Histórico de alterações
+        self.historico = []
+        self.history_index = -1
 
-        @self.sio.event(namespace='/chat')
-        def connect():
-            print('connection established')
+        # Associar evento de atualização da indicação de linha e coluna
+        self.text.bind("<KeyRelease>", self.update_line_col)
 
-        @self.sio.event
-        def OnKeyPress():
-            res = self.text.get("1.0", "end-1c")
-            nome = 'ed'
-            self.sio.emit('message', nome+': '+res, namespace='/chat')
+    def undo(self, event=None):
+        pass
 
-        @self.sio.event(namespace='/chat')
-        def broadcast_chat(data):
-            nome = 'ed'
-            quem = data.split(': ')[0]
-            if quem != nome:
-                self.text.delete("1.0", "end-1c")
-                print(type(data))
-                self.text.insert(END, str(data.replace(quem+': ','')))
+    def redo(self, event=None):
+        pass
 
-        @self.sio.event
-        def disconnect():
-            print('disconnected from server')
+    def movimentacao_historico(self, text):
+        self.historico.append(text)
+        if len(self.historico) > 20:
+            self.historico.pop(0)
+        print(self.historico)
 
-        self.sio.connect('https://repl-chat-server.lukasrocha.repl.co?nome=lukas', namespaces=['/chat'])
-        """
+    def update_history(self, event=None):
+        current_text = self.text.get("1.0", tk.END)
+        if self.history_index < len(self.history) - 1:
+            del self.history[self.history_index + 1:]
+        self.history.append(current_text)
+        self.history_index += 1
+
+    def update_line_col(self, event=None):
+        self.movimentacao_historico(self.text.get("1.0", "end-1c"))
+        cursor_position = self.text.index(tk.INSERT)
+        line, col = cursor_position.split(".")
+        line_col_text = f"Ln {line}, Col {col}"
+        self.line_col_label.config(text=line_col_text)
 
 
 
@@ -107,6 +104,24 @@ class Editor:
         self.cor_inputbg = self.style.colors.get('inputbg')
         self.cor_inputfg = self.style.colors.get('inputfg')
         self.cor_success = self.style.colors.get('success')
+
+
+    def add_underline(self, line_number):
+        tag_name = "underline"
+        self.text.tag_configure(tag_name, underline=True, foreground="red")
+
+        line_start = f"{line_number}.0"
+        line_end = f"{line_number + 1}.0"
+        self.text.tag_add(tag_name, line_start, line_end)
+
+        after_line_start = f"{line_number + 1}.0"
+        end_position = "end"
+        self.text.tag_remove(tag_name, after_line_start, end_position)
+
+    def remove_underline(self):
+        tag_name = "underline"
+        self.text.tag_remove(tag_name, '0.0', 'end')
+
 
     def onScrollPress(self, *args):
         self.scrollbar.bind("<B1-Motion>", self.numberLines.redraw)

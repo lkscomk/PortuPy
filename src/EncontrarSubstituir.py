@@ -19,13 +19,11 @@ class EncontrarSubstituir:
         self.organizar_cores()
 
         self.frame = Frame(self.tela)
-        self.editFrame = Label(self.frame, text='Find').pack(side=LEFT)
         self.edit = Entry(self.frame)
-        self.Find = Button(self.frame, text='Find')
-        self.edit2Frame = Label(self.frame, text="Replace With ").pack(side=LEFT)
+        self.Find = Button(self.frame, text='Buscar')
         self.edit2 = Entry(self.frame)
-        self.replace = Button(self.frame, text='FindNReplace')
-        self.refresh = Button(self.frame, text='Refresh')
+        self.replace = Button(self.frame, text='Subistituir')
+        self.refresh = Button(self.frame, text='Limpar')
 
         self.Find.config(command=self.find)
         self.replace.config(command=self.findNreplace)
@@ -43,15 +41,14 @@ class EncontrarSubstituir:
         self.frame.pack_forget()
 
     def exibirTela(self, objeto =  None):
-        self.edit.pack(side=LEFT, fill=BOTH, expand=1)
+        self.edit.pack(side=LEFT, fill=BOTH, expand=2, padx=2)
         self.edit.focus_set()
         self.Find.pack(side=LEFT)
-        self.edit2.pack(side=LEFT, fill=BOTH, expand=1)
-        self.edit2.focus_set()
-        self.replace.pack(side=LEFT)
-        self.refresh.pack(side=LEFT)
+        self.edit2.pack(side=LEFT, fill=BOTH, expand=1, padx=2)
+        self.replace.pack(side=LEFT, padx=2)
+        self.refresh.pack(side=LEFT, padx=2)
         t = objeto.conteiner_1 if objeto != None else None #quando for para colocar em um local especifico
-        self.frame.pack(side=TOP, before=t)
+        self.frame.pack(before=t)
 
     def find(self, *args):
       # remove tag 'found' from index 1 to END
