@@ -4,20 +4,13 @@ import json
 import re
 import sys
 from os.path import dirname, join
-from Sistema import Sistema
-
 
 class Decodificador:
     def __init__(self, master = None):
-        # self.widgetPy = textPy
-        # self.widgetRun = textRun
         self.tela = master
-
-        self.sistema = Sistema()
 
     def exibirTela(self):
         print('Classe:Login - exibirTela')
-        # self.encontrar.exibirTela()
         self.editor.exibirTela()
     def codificarParaPortoPy(self, codigo):
         return self.codificacao(codigo, compilacao=False)
@@ -62,13 +55,6 @@ class Decodificador:
             final = final.replace(str(imutaveis[r][0]),
                                   code[imutaveis[r][1][0]:imutaveis[r][1][1]], 1)
         return final
-    def criarArquivoTemporario(self, conteudo):
-        local_padrao = str(self.sistema.pasta_do_app+'/temp.py')
-        temp = open(local_padrao, 'w')
-        temp.write(conteudo)
-        temp.close()
-        return local_padrao
-
 
     def reposicionar(self, script, comp):
         try:
@@ -109,6 +95,9 @@ class Decodificador:
                     #portoPy para Python
                     script2 = re.sub(r"\b" + comandos[x][1] + r"\b", comandos[x][0], script2)
             comandos = []
+            especiais = obj['especiais']
+            for x in range(len(especiais)):
+                comandos.append(especiais[x])
             listas = obj['listas']
             for x in range(len(listas)):
                 comandos.append(listas[x])

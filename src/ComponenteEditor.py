@@ -39,45 +39,6 @@ class Editor:
         self.scrollbar.bind("<Button-1>", self.onScrollPress)
         self.text.bind("<MouseWheel>", self.onPressDelay)
 
-         # Associações de atalhos de teclado
-        self.text.bind("<Control-z>", self.undo)
-        self.text.bind("<Control-Shift-Z>", self.redo)
-
-        # Histórico de alterações
-        self.historico = []
-        self.history_index = -1
-
-        # Associar evento de atualização da indicação de linha e coluna
-        self.text.bind("<KeyRelease>", self.update_line_col)
-
-    def undo(self, event=None):
-        pass
-
-    def redo(self, event=None):
-        pass
-
-    def movimentacao_historico(self, text):
-        self.historico.append(text)
-        if len(self.historico) > 20:
-            self.historico.pop(0)
-        print(self.historico)
-
-    def update_history(self, event=None):
-        current_text = self.text.get("1.0", tk.END)
-        if self.history_index < len(self.history) - 1:
-            del self.history[self.history_index + 1:]
-        self.history.append(current_text)
-        self.history_index += 1
-
-    def update_line_col(self, event=None):
-        self.movimentacao_historico(self.text.get("1.0", "end-1c"))
-        cursor_position = self.text.index(tk.INSERT)
-        line, col = cursor_position.split(".")
-        line_col_text = f"Ln {line}, Col {col}"
-        self.line_col_label.config(text=line_col_text)
-
-
-
     def exibirTela(self, objeto = None):
         t = objeto.conteiner_1 if objeto != None else None #quando for para colocar em um local especifico
         self.conteiner_1.pack(side=tk.LEFT, fill=tk.BOTH, expand=True, after=t)

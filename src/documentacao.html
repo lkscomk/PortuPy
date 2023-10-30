@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    p {
+      margin: 10px 0;
+    }
+
+    code {
+      background-color: #f5f5f5;
+      padding: 2px 6px;
+      border: 1px solid #ccc;
+    }
+
+    .section {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      padding: 20px;
+      margin: 10px 0;
+      border-radius: 5px;
+    }
+
+    .code-example {
+      background-color: #f5f5f5;
+      padding: 10px;
+      border: 1px solid #ccc;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Documentação Básica</h1>
+
+  <div class="section">
+    <h2>Proposta PortuPy</h2>
+    <p>
+      O PortuPy é uma pseudolinguagem que foi
+      criada com o propósito de ensinar os conceitos fundamentais da programação de uma forma divertida e acessível,
+      especialmente para estudantes iniciantes.
+    </p>
+    <p>
+      PortuPy tem sua sintaxe semelhante a do Python (linguagem de programação real, muito usada no mercado).
+      O objetivo do uso dessa pseudolinguagem é que futuramente o aluno progride para uma linguagem de programação,
+      nesse caso, preferenciamento, o Python, pela sua facilidade de aprendizado. Essa ferramenta usa palavras em
+      português para representar comandos de programação, o que o torna mais acessível para pessoas
+      que falam a língua portuguesa. Isso é ótimo para iniciantes, pois elimina a barreira do idioma.
+    </p>
+    <p>
+      Além disso, mesmo sendo uma pseudolinguagem, o PortuPy é projetado para ensinar conceitos fundamentais de
+      programação, como variáveis, estruturas condicionais, loops e funções. Os estudantes podem aprender esses
+      conceitos de forma interativa e prática.
+    </p>
+    <p>
+      Em resumo, o PortuPy é uma pseudolinguagem de programação que se destaca por sua simplicidade e acessibilidade.
+      Ele é uma ferramenta valiosa para aqueles que estão dando os primeiros passos na programação e desejam entender os
+      conceitos básicos de uma forma amigável e envolvente. Se você está começando a estudar programação, o PortuPy pode
+      ser uma introdução divertida e educativa a este mundo fascinante.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>Comandos de Entrada e Saída</h2>
+    <p>Para receber entrada do usuário em PortuPy, você pode usar a função <code>entrada()</code>:</p>
+    <div class="code-example">
+      <pre>
+nome = entrada("Digite seu nome: ")
+      </pre>
+    </div>
+    <p>Para exibir saída, use a função <code>escrever()</code>:</p>
+    <div class="code-example">
+      <pre>
+escrever("Olá, " + nome)
+      </pre>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Principais Tipos de Dados</h2>
+    <p>Python suporta diversos tipos de dados, incluindo:</p>
+    <ul>
+      <li>Números inteiros (inteiro)</li>
+      <li>Números decimais (decimal)</li>
+      <li>Carateres (caracter)</li>
+      <li>Lógicos (logico)</li>
+    </ul>
+    <div class="code-example">
+      <pre>
+#caracter
+nome = "Joao"
+
+#inteiro
+idade = 15
+
+#decimal
+altura = 1.75
+
+#logico
+trabalha = Verdadeiro
+      </pre>
+    </div>
+  </div>
+
+  <div class="section">
+    <h1>Operadores em PortuPy</h1>
+
+    <div class="section">
+      <h2>Operadores Aritméticos</h2>
+      <ul>
+        <li><code>+</code> (Adição)</li>
+        <li><code>-</code> (Subtração)</li>
+        <li><code>*</code> (Multiplicação)</li>
+        <li><code>/</code> (Divisão)</li>
+        <li><code>//</code> (Divisão de Piso)</li>
+        <li><code>%</code> (Módulo - Resto da Divisão)</li>
+        <li><code>**</code> (Exponenciação)</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Operadores de Comparação</h2>
+      <ul>
+        <li><code>==</code> (Igual a)</li>
+        <li><code>!=</code> (Diferente de)</li>
+        <li><code>&lt;</code> (Menor que)</li>
+        <li><code>&gt;</code> (Maior que)</li>
+        <li><code>&lt;=</code> (Menor ou igual a)</li>
+        <li><code>&gt;=</code> (Maior ou igual a)</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Operadores Lógicos</h2>
+      <ul>
+        <li><code>and</code> (E lógico)</li>
+        <li><code>or</code> (Ou lógico)</li>
+        <li><code>not</code> (Negação lógica)</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Operadores de Identidade</h2>
+      <ul>
+        <li><code>is</code> (É)</li>
+        <li><code>is not</code> (Não é)</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Operadores de Associação</h2>
+      <ul>
+        <li><code>in</code> (Está em)</li>
+        <li><code>not in</code> (Não está em)</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Operadores de Atribuição</h2>
+      <ul>
+        <li><code>=</code> (Atribuição)</li>
+        <li><code>+=</code> (Adição e atribuição)</li>
+        <li><code>-=</code> (Subtração e atribuição)</li>
+        <li><code>*=</code> (Multiplicação e atribuição)</li>
+        <li><code>/=</code> (Divisão e atribuição)</li>
+        <li><code>%=</code> (Módulo e atribuição)</li>
+        <li><code>//=</code> (Divisão de Piso e atribuição)</li>
+        <li><code>**=</code> (Exponenciação e atribuição)</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Operador de Concatenação de Strings</h2>
+      <ul>
+        <li><code>+</code> (Usado para concatenar strings)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <h1>Entendendo Estruturas de Condição</h1>
+
+    <p>As estruturas de condição são usadas para criar lógica condicional em programas. Elas permitem que você tome
+      decisões com base em condições específicas.</p>
+
+    <h2>Exemplo de Estrutura de Condição:</h2>
+    <div class="code-example">
+      <pre>
+# Solicita ao usuário que insira um número
+numero = decimal(entrada("Digite um número: "))
+
+# Verifica se o número é positivo
+se numero > 0:
+    escrever("O número é positivo.")
+e se numero == 0:
+    escrever("O número é zero.")
+senao:
+    escrever("O número é negativo.")
+
+        </pre>
+    </div>
+
+    <p>Neste exemplo em Python, estamos verificando se a variável <code>idade</code> é maior ou igual a 18. Se a
+      condição for verdadeira, o programa imprime "Você é maior de idade". Caso contrário, ele imprime "Você é menor de
+      idade".</p>
+
+    <h2>Principais Estruturas de Condição:</h2>
+    <ul>
+      <li><strong>se</strong>: Usado para verificar se uma condição é verdadeira.</li>
+      <li><strong>e se</strong>: Permite verificar várias condições.</li>
+      <li><strong>senao</strong>: Fornece uma alternativa caso a condição do <strong>if</strong> seja falsa.</li>
+    </ul>
+
+    <p>As estruturas de condição são fundamentais para criar programas que podem se adaptar a diferentes situações e
+      tomar decisões com base em informações variáveis.</p>
+
+  </div>
+
+  <div class="section">
+    <h1>Entendendo Estruturas de Repetição</h1>
+
+    <p>As estruturas de repetição são usadas para executar um bloco de código várias vezes. Elas são essenciais para
+      automatizar tarefas repetitivas em programas.</p>
+
+    <h2>Estrutura de Repetição <code>para</code>:</h2>
+    <div class="code-example">
+      <pre>
+nomes = ["Alice", "Bob", "Carol", "David"]
+para nome em nomes:
+    escrever("Olá, " + nome)
+        </pre>
+      <pre>
+para x em faixa(10):
+    escrever(x)
+        </pre>
+    </div>
+
+    <p>Neste exemplo em Python, usamos um loop <code>para</code> para percorrer a lista de nomes e imprimir uma saudação
+      para cada pessoa na lista.</p>
+
+    <h2>Estrutura de Repetição <code>enquanto</code>:</h2>
+    <div class="code-example">
+      <pre>
+contador = 0
+
+enquanto contador &lt; 5:
+    escrever("Contagem: " + caracter(contador))
+    contador += 1
+        </pre>
+    </div>
+
+    <p>Neste exemplo, usamos um loop <code>enquanto</code> para contar de 0 a 4. O loop continuará executando até que a
+      condição <code>contador &lt; 5</code> seja falsa.</p>
+
+    <p>As estruturas de repetição são cruciais para a automação e repetição de tarefas em programas, economizando tempo
+      e esforço.</p>
+
+  </div>
+  <div class="section">
+    <h1>Funções em Programação</h1>
+
+    <p>Funções são blocos de código que podem ser reutilizados para realizar tarefas específicas. Elas ajudam a organizar e modularizar um programa.</p>
+
+    <h2>Definindo e Chamando Funções:</h2>
+    <div class="code-example">
+        <pre>
+# Definindo uma função
+funcao saudacao(nome):
+    devolva "Olá, " + nome
+
+# Chamando a função
+mensagem = saudacao("Alice")
+escrever(mensagem)
+        </pre>
+    </div>
+
+    <p>Neste exemplo em PortuPy, definimos uma função chamada `saudacao` que aceita um argumento `nome` e retorna uma mensagem de saudação. Em seguida, chamamos a função e armazenamos a mensagem resultante em uma variável.</p>
+
+    <h2>Funções com Parâmetros Opcionais:</h2>
+    <div class="code-example">
+        <pre>
+# Função com parâmetro opcional
+funcao boas_vindas(nome, cidade="Desconhecida"):
+    return "Olá, " + nome + " de " + cidade
+
+# Chamando a função
+mensagem = boas_vindas("Bob")
+escrever(mensagem)
+        </pre>
+    </div>
+
+    <p>Neste exemplo, a função `boas_vindas` aceita dois parâmetros, sendo que `cidade` tem um valor padrão opcional. Se a cidade não for fornecida, ela será definida como "Desconhecida" por padrão.</p>
+
+    <p>As funções são uma parte fundamental da programação, permitindo a criação de blocos de código reutilizáveis para executar tarefas específicas.</p>
+
+  </div>
+</body>
+
+</html>
