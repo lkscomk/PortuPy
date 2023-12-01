@@ -5,6 +5,7 @@
     [ "nonlocal", "semlocal"],
     [ "continue", "continue"],
     [ "finally", "porfim"],
+    [ "finally:", "porfim:"],
     [ "return", "devolva"],
     [ "except", "deuerro"],
     [ "import", "importe"],
@@ -25,6 +26,7 @@
     [ "pass", "passar"],
     [ "with", "com"],
     [ "for", "para"],
+    [ "try", "tentar"],
     [ "try:", "tentar:"],
     [ "def", "funcao"],
     [ "not", "nao"],
@@ -104,7 +106,7 @@
     ["ValueError", "ErroDeValor"],
     ["Warning", "Aviso"],
     ["WindowsError", "ErroDoWindows"],
-    ["ZeroDivisionError", "ZeroDivisiaoError"]
+    ["ZeroDivisionError", "ErroDivisaoZero"]
   ],
   "especiais": [
     ["null", "vazio"],
@@ -151,15 +153,15 @@
   ],
   "listas": [
     ["append", "acrescentar"],
-    ["extend", "extend"],
+    ["extend", "estender"],
     ["insert", "inserir"],
     ["remove", "remover"],
     ["pop", "retirar"],
     ["clear", "limpar"],
-    ["index", "index"],
+    ["index", "indice"],
     ["count", "contar"],
     ["sort", "organizar"],
-    ["reverse", "reverso"],
+    ["reverse", "reverter"],
     ["copy", "copia"]
   ],
   "string": [

@@ -115,6 +115,9 @@ class Decodificador:
             string = obj['string']
             for x in range(len(string)):
                 comandos.append(string[x])
+            erros = obj['erros']
+            for x in range(len(erros)):
+                comandos.append(erros[x])
             for x in range(len(comandos)):
                 if not comp:
                     #Python para portoPy

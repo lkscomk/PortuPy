@@ -1,6 +1,7 @@
 import os
 import tempfile
 import re
+from googletrans import Translator
 
 class Maquina:
     def __init__(self):
@@ -32,7 +33,8 @@ time.sleep(5)
                   return ['erro', f"Erro não identificado. Por favor, verifique o código e tente novamente."]
               except Exception as erro:
                   linha = self.extrair_primeira_ocorrencia(str(erro))
-                  return ['erro', str(erro), linha]
+                  traduzido = self.traduzir_texto(str(erro))
+                  return ['erro', traduzido, linha]
             else:
                 return None
         except Exception as erro:
@@ -48,6 +50,11 @@ time.sleep(5)
             return numero
         else:
             return None
+
+    def traduzir_texto(self, texto, idioma_destino='pt'):
+        translator = Translator()
+        traducao = translator.translate(texto, dest=idioma_destino)
+        return traducao.text
 
 if __name__ == '__main__':
     codigo_usuario = """

@@ -4,7 +4,7 @@ from idlelib.percolator import Percolator
 from ttkbootstrap import Style
 from Colorizer import *
 import tkinter as tk
-from tkinter import scrolledtext
+import autopep8
 
 
 # This is a scrollable text widget
@@ -18,11 +18,12 @@ class Editor:
         self.cor_danger = None
         self.cor_inputfg = None
         self.cor_success = None
-        self.font_padrao = ('courier new', 11, BOLD)
+        self.tamanho_font = 11
+        self.font_padrao = ('courier new', self.tamanho_font , BOLD)
 
         self.organizar_cores()
 
-        self.text = tk.Text(self.conteiner_1, width=100, height=100, font=self.font_padrao)
+        self.text = tk.Text(self.conteiner_1, width=100, height=100, font=self.font_padrao, undo=True, autoseparators=True)
         color_config(self.text)
         p = Percolator(self.text)
         d = ColorDelegator()
@@ -39,45 +40,6 @@ class Editor:
         self.scrollbar.bind("<Button-1>", self.onScrollPress)
         self.text.bind("<MouseWheel>", self.onPressDelay)
 
-         # Associações de atalhos de teclado
-        self.text.bind("<Control-z>", self.undo)
-        self.text.bind("<Control-Shift-Z>", self.redo)
-
-        # Histórico de alterações
-        self.historico = []
-        self.history_index = -1
-
-        # Associar evento de atualização da indicação de linha e coluna
-        self.text.bind("<KeyRelease>", self.update_line_col)
-
-    def undo(self, event=None):
-        pass
-
-    def redo(self, event=None):
-        pass
-
-    def movimentacao_historico(self, text):
-        self.historico.append(text)
-        if len(self.historico) > 20:
-            self.historico.pop(0)
-        print(self.historico)
-
-    def update_history(self, event=None):
-        current_text = self.text.get("1.0", tk.END)
-        if self.history_index < len(self.history) - 1:
-            del self.history[self.history_index + 1:]
-        self.history.append(current_text)
-        self.history_index += 1
-
-    def update_line_col(self, event=None):
-        self.movimentacao_historico(self.text.get("1.0", "end-1c"))
-        cursor_position = self.text.index(tk.INSERT)
-        line, col = cursor_position.split(".")
-        line_col_text = f"Ln {line}, Col {col}"
-        self.line_col_label.config(text=line_col_text)
-
-
-
     def exibirTela(self, objeto = None):
         t = objeto.conteiner_1 if objeto != None else None #quando for para colocar em um local especifico
         self.conteiner_1.pack(side=tk.LEFT, fill=tk.BOTH, expand=True, after=t)
@@ -85,13 +47,34 @@ class Editor:
         self.numberLines.pack(side=tk.LEFT, fill=tk.Y, padx=(5, 0))
         self.text.pack(side=tk.RIGHT, fill=tk.BOTH, expand=True)
 
+    def ajustar_indentacao(self, codigo):
+        codigo_formatado = autopep8.fix_code(codigo)
+
+        return codigo_formatado
+
+    def desfazer(self):
+        self.text.edit_undo()
+
+    def refazer(self):
+        self.text.edit_redo()
+
+    def aumentar_fonte(self):
+        if self.tamanho_font < 60:
+            self.tamanho_font += 1
+            self.text.configure(font=('courier new', self.tamanho_font , BOLD))
+
+    def diminuir_fonte(self):
+        if self.tamanho_font > 11:
+            self.tamanho_font -= 1
+            self.text.configure(font=('courier new', self.tamanho_font , BOLD))
+
     def ocultarTela(self):
         self.conteiner_1.pack_forget()
         self.scrollbar.pack_forget()
         self.numberLines.pack_forget()
         self.text.pack_forget()
 
-    def organizar_cores(self):
+    def organizar_cores(self, *args):
         print('Classe:App - organizar_cores')
 
         self.style = Style()
@@ -105,6 +88,17 @@ class Editor:
         self.cor_inputfg = self.style.colors.get('inputfg')
         self.cor_success = self.style.colors.get('success')
 
+    def adicionar_tamanho(self, *args):
+        print('adicionar_tamanho')
+        self.tamanho_font += 1
+        self.font_padrao = ('courier new', self.tamanho_font , BOLD)
+
+    def remover_tamanho(self, *args):
+        print('remover_tamanho')
+        self.tamanho_font -= 1
+        print(self.tamanho_font )
+        self.font_padrao = ('courier new', self.tamanho_font , BOLD)
+        self.text = tk.Text(self.conteiner_1, width=100, height=100, font=self.font_padrao)
 
     def add_underline(self, line_number):
         tag_name = "underline"
