@@ -24,7 +24,6 @@ time.sleep(5)
         arquivo_temp = self.criarArquivoTemporario(cod)
         try:
             resultado = os.system(f'python {arquivo_temp}')
-            print(resultado)
             if resultado == -1073741510:
               return None
             if resultado != 0:

@@ -2,6 +2,9 @@
 <html>
 
 <head>
+  <link rel="stylesheet" href="caminho/para/o/seu/highlight/styles/default.css">
+  <script src="caminho/para/o/seu/highlight/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -32,7 +35,7 @@
       border-radius: 5px;
     }
 
-    .code-example {
+    .python {
       background-color: #f5f5f5;
       padding: 10px;
       border: 1px solid #ccc;
@@ -74,13 +77,13 @@
   <div class="section">
     <h2>Comandos de Entrada e Saída</h2>
     <p>Para receber entrada do usuário em PortuPy, você pode usar a função <code>entrada()</code>:</p>
-    <div class="code-example">
+    <div class="python">
       <pre>
 nome = entrada("Digite seu nome: ")
       </pre>
     </div>
     <p>Para exibir saída, use a função <code>escrever()</code>:</p>
-    <div class="code-example">
+    <div class="python">
       <pre>
 escrever("Olá, " + nome)
       </pre>
@@ -96,7 +99,7 @@ escrever("Olá, " + nome)
       <li>Carateres (caracter)</li>
       <li>Lógicos (logico)</li>
     </ul>
-    <div class="code-example">
+    <div class="python">
       <pre>
 #caracter
 nome = "Joao"
@@ -195,7 +198,7 @@ trabalha = Verdadeiro
       decisões com base em condições específicas.</p>
 
     <h2>Exemplo de Estrutura de Condição:</h2>
-    <div class="code-example">
+    <div class="python">
       <pre>
 # Solicita ao usuário que insira um número
 numero = decimal(entrada("Digite um número: "))
@@ -234,7 +237,7 @@ senao:
       automatizar tarefas repetitivas em programas.</p>
 
     <h2>Estrutura de Repetição <code>para</code>:</h2>
-    <div class="code-example">
+    <div class="python">
       <pre>
 nomes = ["Alice", "Bob", "Carol", "David"]
 para nome em nomes:
@@ -250,7 +253,7 @@ para x em faixa(10):
       para cada pessoa na lista.</p>
 
     <h2>Estrutura de Repetição <code>enquanto</code>:</h2>
-    <div class="code-example">
+    <div class="python">
       <pre>
 contador = 0
 
@@ -275,7 +278,7 @@ enquanto contador &lt; 5:
       organizar e modularizar um programa.</p>
 
     <h2>Definindo e Chamando Funções:</h2>
-    <div class="code-example">
+    <div class="python">
       <pre>
 # Definindo uma função
 funcao saudacao(nome):
@@ -291,7 +294,7 @@ escrever(mensagem)
       mensagem de saudação. Em seguida, chamamos a função e armazenamos a mensagem resultante em uma variável.</p>
 
     <h2>Funções com Parâmetros Opcionais:</h2>
-    <div class="code-example">
+    <div class="python">
       <pre>
 # Função com parâmetro opcional
 funcao boas_vindas(nome, cidade="Desconhecida"):
@@ -320,7 +323,7 @@ escrever(mensagem)
     <h2>Instrução Raise:</h2>
     A instrução raise é utilizada para gerar manualmente uma exceção. Isso é útil quando você deseja sinalizar um erro
     específico em determinada situação, permitindo um tratamento personalizado.
-    <div class="code-example">
+    <div class="python">
       <pre>
 funcao exemplo_divisao(dividendo, divisor):
     tentar:
@@ -347,7 +350,7 @@ exemplo_divisao("10", 2)  # Saída esperada: Erro: Certifique-se de que os opera
   <div class="section">
 
     <h1>Palavras-chave e Comandos em Python</h1>
-    <div class="code-example">
+    <div class="python">
       <p><strong>Verdadeiro (True):</strong> Valor booleano verdadeiro.</p>
       <p><strong>Falso (False):</strong> Valor booleano falso.</p>
       <p><strong>semlocal (nonlocal):</strong> Indica uma variável não local.</p>
@@ -389,7 +392,7 @@ exemplo_divisao("10", 2)  # Saída esperada: Erro: Certifique-se de que os opera
   <div class="section">
     <h1>Comandos de Listas em PortuPy</h1>
 
-    <div class="code-example">
+    <div class="python">
       <h2>append - acrescentar</h2>
       <pre>
 variavel = [1, 2, 3]
@@ -398,7 +401,7 @@ escrever(variavel)  # Output: [1, 2, 3, 4]
       </pre>
     </div>
 
-    <div class="code-example">
+    <div class="python">
       <h2>extend - estender</h2>
       <pre>
 lista1 = [1, 2, 3]
@@ -408,7 +411,7 @@ escrever(lista1)  # Output: [1, 2, 3, 4, 5, 6]
       </pre>
     </div>
 
-    <div class="code-example">
+    <div class="python">
       <h2>insert - inserir</h2>
       <pre>
 variavel = [1, 2, 3]
@@ -417,7 +420,7 @@ escrever(variavel)  # Output: [1, 4, 2, 3]
       </pre>
     </div>
 
-    <div class="code-example">
+    <div class="python">
       <h2>remove - remover</h2>
       <pre>
 variavel = [1, 2, 3, 4]
@@ -426,7 +429,7 @@ escrever(variavel)  # Output: [1, 3, 4]
       </pre>
     </div>
 
-    <div class="code-example">
+    <div class="python">
       <h2>pop - retirar</h2>
       <pre>
 variavel = [1, 2, 3]
@@ -436,7 +439,7 @@ escrever(elemento)  # Output: 2
       </pre>
     </div>
 
-    <div class="code-example">
+    <div class="python">
       <h2>clear - limpar</h2>
       <pre>
 variavel = [1, 2, 3]
@@ -445,7 +448,7 @@ escrever(variavel)  # Output: []
       </pre>
     </div>
 
-    <div class="code-example">
+    <div class="python">
       <h2>index - indice</h2>
       <pre>
 variavel = [1, 2, 3, 4, 3]
@@ -454,7 +457,7 @@ escrever(indice)  # Output: 2
       </pre>
     </div>
 
-    <div class="code-example">
+    <div class="python">
       <h2>count - contar</h2>
       <pre>
 variavel = [1, 2, 3, 3, 4]
@@ -463,7 +466,7 @@ escrever(contagem)  # Output: 2
       </pre>
     </div>
 
-    <div class="code-example">
+    <div class="python">
       <h2>sort - organizar</h2>
       <pre>
 variavel = [4, 2, 1, 3]
@@ -472,7 +475,7 @@ escrever(variavel)  # Output: [1, 2, 3, 4]
       </pre>
     </div>
 
-    <div class="code-example">
+    <div class="python">
       <h2>reverso - reverter</h2>
       <pre>
 variavel = [1, 2, 3]
@@ -481,7 +484,7 @@ escrever(variavel)  # Output: [3, 2, 1]
       </pre>
     </div>
 
-    <div class="code-example">
+    <div class="python">
       <h2>copy - copiar</h2>
       <pre>
 variavel = [1, 2, 3]
@@ -495,7 +498,7 @@ escrever(copia_lista)  # Output: [1, 2, 3]
   <div class="section">
     <h1>Comandos de Caracteres em PortuPy</h1>
 
-    <div class="code-example">
+    <div class="python">
       <h2>capitalize - capitalizar</h2>
       <pre>
 texto = "exemplo de texto"
@@ -504,7 +507,7 @@ escrever(texto_capitalizado)  # Output: "Exemplo de texto"
   </pre>
     </div>
 
-    <div class="code-example">
+    <div class="python">
       <h2>lower - minuscula</h2>
       <pre>
 texto = "Exemplo de TEXTO"
@@ -513,7 +516,7 @@ escrever(texto_minuscula)  # Output: "exemplo de texto"
   </pre>
     </div>
 
-    <div class="code-example">
+    <div class="python">
       <h2>upper - maiuscula</h2>
       <pre>
 texto = "Exemplo de TEXTO"
@@ -522,7 +525,7 @@ escrever(texto_maiuscula)  # Output: "EXEMPLO DE TEXTO"
   </pre>
     </div>
 
-    <div class="code-example">
+    <div class="python">
       <h2>title - titulo</h2>
       <pre>
 texto = "exemplo de texto"
@@ -531,7 +534,7 @@ escrever(texto_titulo)  # Output: "Exemplo De Texto"
   </pre>
     </div>
 
-    <div class="code-example">
+    <div class="python">
       <h2>strip - remover_espacos</h2>
       <pre>
 texto = "   exemplo   "
@@ -540,7 +543,7 @@ escrever(texto_sem_espacos)  # Output: "exemplo"
   </pre>
     </div>
 
-    <div class="code-example">
+    <div class="python">
       <h2>lstrip - lremover_espacos</h2>
       <pre>
 texto = "   exemplo   "
@@ -549,7 +552,7 @@ escrever(texto_sem_espacos_esquerda)  # Output: "exemplo   "
   </pre>
     </div>
 
-    <div class="code-example">
+    <div class="python">
       <h2>rstrip - rremover_espacos</h2>
       <pre>
 texto = "   exemplo   "
@@ -558,7 +561,7 @@ escrever(texto_sem_espacos_direita)  # Output: "   exemplo"
   </pre>
     </div>
 
-    <div class="code-example">
+    <div class="python">
       <h2>replace - substituir</h2>
       <pre>
 texto = "exemplo de texto"
@@ -567,7 +570,7 @@ escrever(novo_texto)  # Output: "exemplo de Python"
   </pre>
     </div>
 
-    <div class="code-example">
+    <div class="python">
       <h2>split - dividir</h2>
       <pre>
 texto = "exemplo de texto"
@@ -576,7 +579,7 @@ escrever(palavras)  # Output: ['exemplo', 'de', 'texto']
   </pre>
     </div>
 
-    <div class="code-example">
+    <div class="python">
       <h2>join - juntar</h2>
       <pre>
 palavras = ['exemplo', 'de', 'texto']
@@ -585,7 +588,7 @@ escrever(texto)  # Output: "exemplo de texto"
   </pre>
     </div>
 
-    <div class="code-example">
+    <div class="python">
       <h2>find - encontrar</h2>
       <pre>
 texto = "exemplo de texto"
@@ -594,7 +597,7 @@ escrever(posicao)  # Output: 8
   </pre>
     </div>
 
-    <div class="code-example">
+    <div class="python">
       <h2>count - contar</h2>
       <pre>
 texto = "exemplo de texto"
@@ -603,7 +606,7 @@ escrever(contagem)  # Output: 3
   </pre>
     </div>
 
-    <div class="code-example">
+    <div class="python">
       <h2>startswith - comeca_com</h2>
       <pre>
 texto = "exemplo de texto"
@@ -612,7 +615,7 @@ escrever(resultado)  # Output: Verdadeiro
   </pre>
     </div>
 
-    <div class="code-example">
+    <div class="python">
       <h2>endswith - termina_com</h2>
       <pre>
 texto = "exemplo de texto"
@@ -621,7 +624,7 @@ escrever(resultado)  # Output: Verdadeiro
   </pre>
     </div>
 
-    <div class="code-example">
+    <div class="python">
       <h2>isalpha - e_alfabetica</h2>
       <pre>
 texto = "exemplo"
@@ -630,7 +633,7 @@ escrever(resultado)  # Output: Verdadeiro
   </pre>
     </div>
 
-    <div class="code-example">
+    <div class="python">
       <h2>isdigit - e_numerica</h2>
       <pre>
 texto = "123"
