@@ -130,7 +130,7 @@ class App:
         self.tela.config(menu=self.mainmenu)
 
     def abrirDocumentacao(self, event=None):
-        webbrowser.open("https://portupy.lukasrocha.repl.co/#documentacao")
+        webbrowser.open("https://portupy-view-2b443cd7e76d.herokuapp.com/#documentacao")
 
     def codificarParaPortoPy(self, event=None, *args):
         print('Classe:App - codificarParaPortoPy')
