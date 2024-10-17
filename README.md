@@ -1,5 +1,11 @@
 # PortuPy
-### 4º Período - Tecnologia em Sistemas para Internet
+
+Este projeto é referente ao meu trabalho de conclusão de curso, desenvolvido e disponível no [link do repositório](http://repositorio.ifro.edu.br/handle/123456789/1357).
+
+## Descrição
+
+PortuPy é uma pseudolinguagem baseada na sintaxe do Python, projetada para facilitar o aprendizado e a compreensão da lógica de programação. O objetivo principal é oferecer uma ferramenta acessível para estudantes e iniciantes na área de programação, permitindo a prática e o desenvolvimento de habilidades essenciais.
+
 
 IDLE PortuPy
 
