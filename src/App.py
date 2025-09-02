@@ -8,6 +8,7 @@ import webbrowser
 import sys
 from tkinter import filedialog
 from tkinter import messagebox
+from ttkbootstrap.dialogs import Messagebox
 import base64
 
 class App:
@@ -194,8 +195,9 @@ class App:
     def perguntar_salvar(self, event=None):
         print('Classe:App - perguntar_salvar')
         if not self.arquivoSalvo:
-            resposta = messagebox.askyesnocancel(
-                "Salvar Alterações?", "Deseja salvar as alterações?")
+            resposta = Messagebox.yesno(
+                message="Salvar Alterações?", title="Atenção",
+            parent=self.tela)
             if resposta is None:
                 return
             elif resposta:
@@ -220,8 +222,9 @@ class App:
     def fechar_janela(self):
         print('Classe:App - fechar_janela')
         if not self.arquivoSalvo:
-            resposta = messagebox.askyesnocancel(
-                "Salvar Alterações?", "Deseja salvar as alterações?")
+            resposta = Messagebox.yesno(
+                message="Salvar Alterações?", title="Atenção"
+            parent=self.tela)
             if resposta is None:
                 return
             elif resposta:
@@ -238,7 +241,8 @@ class App:
         if mensagem and mensagem[0] == 'erro':
             if len(mensagem) >= 3:
                 self.editor.add_underline(mensagem[2])
-            messagebox.showerror('Ops... Algum Problema foi encontrado!', mensagem[1])
+            Messagebox.show_error('Ops... Algum Problema foi encontrado!', mensagem[1],
+            parent=self.tela)
 
     def organizar_cores(self):
         print('Classe:App - organizar_cores')

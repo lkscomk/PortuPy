@@ -1,259 +1,994 @@
 {
-  "keyword": [
-    [ "True", "Verdadeiro"],
-    [ "False", "Falso"],
-    [ "nonlocal", "semlocal"],
-    [ "continue", "continue"],
-    [ "finally", "porfim"],
-    [ "finally:", "porfim:"],
-    [ "return", "devolva"],
-    [ "except", "deuerro"],
-    [ "import", "importe"],
-    [ "global", "global"],
-    [ "assert", "afirmar"],
-    [ "lambda", "fazer"],
-    [ "class", "classe"],
-    [ "yield", "gerador"],
-    [ "while", "enquanto"],
-    [ "raise", "errar"],
-    [ "break", "quebrar"],
-    [ "elif", "e se"],
-    [ "if", "se"],
-    [ "else", "senao"],
-    [ "else:", "senao:"],
-    [ "from", "de"],
-    [ "None", "Nada"],
-    [ "pass", "passar"],
-    [ "with", "com"],
-    [ "for", "para"],
-    [ "try", "tentar"],
-    [ "try:", "tentar:"],
-    [ "def", "funcao"],
-    [ "not", "nao"],
-    [ "del", "remova"],
-    [ "as", "apelidar"],
-    [ "or", "ou"],
-    [ "in", "em"],
-    [ "and", "e"],
-    [ "is", "é"]
-  ],
-  "erros": [
-    ["ArithmeticError", "ErroDeAritmetica"],
-    ["AssertionError", "ErroDeAssercao"],
-    ["AttributeError", "ErroDeAtributo"],
-    ["BaseException", "ExcecaoBase"],
-    ["BlockingIOError", "ErroDeBloqueioIO"],
-    ["BrokenPipeError", "ErroDeQuebraDePipe"],
-    ["BufferError", "ErroDeBuffer"],
-    ["BytesWarning", "AvisoDeBytes"],
-    ["ChildProcessError", "ErroDeProcessoFilho"],
-    ["ConnectionAbortedError", "ErroDeConexaoAbortada"],
-    ["ConnectionError", "ErroDeConexao"],
-    ["ConnectionRefusedError", "ErroDeConexaoRecusada"],
-    ["ConnectionResetError", "ErroDeResetDeConexao"],
-    ["DeprecationWarning", "AvisoDeDepreciacao"],
-    ["EOFError", "ErroEOF"],
-    ["Ellipsis", "Elipse"],
-    ["EnvironmentError", "ErroDeAmbiente"],
-    ["Exception", "Excecao"],
-    ["FileExistsError", "ErroDeArquivoExistente"],
-    ["FileNotFoundError", "ErroDeArquivoNaoEncontrado"],
-    ["FloatingPointError", "ErroDePontoFlutuante"],
-    ["FutureWarning", "AvisoDeFuturo"],
-    ["GeneratorExit", "SaidaDeGerador"],
-    ["IOError", "ErroIO"],
-    ["ImportError", "ErroDeImportacao"],
-    ["ImportWarning", "AvisoDeImportacao"],
-    ["IndentationError", "ErroDeIndentacao"],
-    ["IndexError", "ErroDeIndice"],
-    ["InterruptedError", "ErroDeInterrupcao"],
-    ["IsADirectoryError", "ErroDeDiretorio"],
-    ["KeyError", "ErroDeChave"],
-    ["KeyboardInterrupt", "InterrupcaoDeTeclado"],
-    ["LookupError", "ErroDePesquisa"],
-    ["MemoryError", "ErroDeMemoria"],
-    ["ModuleNotFoundError", "ErroDeModuloNaoEncontrado"],
-    ["NameError", "ErroDeNome"],
-    ["NotADirectoryError", "ErroDeNaoDiretorio"],
-    ["NotImplemented", "NaoImplementado"],
-    ["NotImplementedError", "ErroDeNaoImplementado"],
-    ["OSError", "ErroOS"],
-    ["OverflowError", "ErroDeEstouro"],
-    ["PendingDeprecationWarning", "AvisoDeDepreciacaoPendente"],
-    ["PermissionError", "ErroDePermissao"],
-    ["ProcessLookupError", "ErroDePesquisaDeProcesso"],
-    ["RecursionError", "ErroDeRecursao"],
-    ["ReferenceError", "ErroDeReferencia"],
-    ["ResourceWarning", "AvisoDeRecurso"],
-    ["RuntimeError", "ErroDeExecucao"],
-    ["RuntimeWarning", "AvisoDeExecucao"],
-    ["StopAsyncIteration", "PararIteracaoAssincrona"],
-    ["StopIteration", "PararIteracao"],
-    ["SyntaxError", "ErroDeSintaxe"],
-    ["SyntaxWarning", "AvisoDeSintaxe"],
-    ["SystemError", "ErroDeSistema"],
-    ["SystemExit", "SaidaDeSistema"],
-    ["TabError", "ErroDeTabulacao"],
-    ["TimeoutError", "ErroDeTimeout"],
-    ["TypeError", "ErroDeTipo"],
-    ["UnboundLocalError", "ErroDeVariavelLocalNaoDefinida"],
-    ["UnicodeDecodeError", "ErroDeDecodificacaoUnicode"],
-    ["UnicodeEncodeError", "ErroDeCodificacaoUnicode"],
-    ["UnicodeError", "ErroDeUnicode"],
-    ["UnicodeTranslateError", "ErroDeTraducaoUnicode"],
-    ["UnicodeWarning", "AvisoDeUnicode"],
-    ["UserWarning", "AvisoDeUsuario"],
-    ["ValueError", "ErroDeValor"],
-    ["Warning", "Aviso"],
-    ["WindowsError", "ErroDoWindows"],
-    ["ZeroDivisionError", "ErroDivisaoZero"]
-  ],
-  "especiais": [
-    ["null", "vazio"],
-    ["self", "aquiDentro"],
-    ["__debug__", "__depuracao__"],
-    ["__doc__", "__documentacao__"],
-    ["__import__", "__importar__"],
-    ["__loader__", "__carregador__"],
-    ["__name__", "__nome__"],
-    ["__package__", "__pacote__"],
-    ["__spec__", "__especificacao__"],
-    ["__build_class__", "__construir_classe__"],
-    ["__init__", "__construtor__"],
-    ["__del__", "__deletor__"],
-    ["__str__", "__converter_para_string__"],
-    ["__repr__", "__representacao_textual__"],
-    ["__len__", "__tamanho__"],
-    ["__getitem__", "__obter_item__"],
-    ["__setitem__", "__definir_item__"],
-    ["__contains__", "__contem__"],
-    ["__call__", "__chamada__"],
-    ["__eq__", "__igualdade__"],
-    ["__lt__", "__menor_que__"],
-    ["__le__", "__menor_ou_igual_a__"],
-    ["__gt__", "__maior_que__"],
-    ["__ge__", "__maior_ou_igual_a__"],
-    ["__add__", "__adicao__"],
-    ["__sub__", "__subtracao__"],
-    ["__mul__", "__multiplicacao__"],
-    ["__div__", "__divisao__"],
-    ["__enter__", "__iniciar_contexto__"],
-    ["__exit__", "__finalizar_contexto__"],
-    ["__iter__", "__iterador__"],
-    ["__next__", "__proximo__"],
-    ["__getattr__", "__obter_atributo__"],
-    ["__setattr__", "__definir_atributo__"],
-    ["__delattr__", "__deletar_atributo__"],
-    ["__hash__", "__hash__"],
-    ["__delitem__", "__deletar_item__"],
-    ["__setitem__", "__definir_item__"],
-    ["__getitem__", "__obter_item__"],
-    ["__enter__", "__iniciar_contexto__"],
-    ["__exit__", "__finalizar_contexto__"]
-  ],
-  "listas": [
-    ["append", "acrescentar"],
-    ["extend", "estender"],
-    ["insert", "inserir"],
-    ["remove", "remover"],
-    ["pop", "retirar"],
-    ["clear", "limpar"],
-    ["index", "indice"],
-    ["count", "contar"],
-    ["sort", "organizar"],
-    ["reverse", "reverter"],
-    ["copy", "copia"]
-  ],
-  "string": [
-    ["capitalize", "capitalizar"],
-    ["lower", "minuscula"],
-    ["upper", "maiuscula"],
-    ["title", "titulo"],
-    ["strip", "remover_espacos"],
-    ["lstrip", "lremover_espacos"],
-    ["rstrip", "rremover_espacos"],
-    ["replace", "substituir"],
-    ["split", "dividir"],
-    ["join", "juntar"],
-    ["find", "encontrar"],
-    ["count", "contar"],
-    ["startswith", "comeca_com"],
-    ["endswith", "termina_com"],
-    ["isalpha", "e_alfabetica"],
-    ["isdigit", "e_numerica"]
-  ],
-  "embutidas": [
-    ["abs", "abs"],
-    ["all", "todos"],
-    ["any", "algum"],
-    ["ascii", "ascii"],
-    ["bin", "binario"],
-    ["bool", "logico"],
-    ["breakpoint", "breakpoint"],
-    ["bytearray", "bytearray"],
-    ["bytes", "bytes"],
-    ["callable", "chamavel"],
-    ["chr", "chr"],
-    ["classmethod", "classmethod"],
-    ["compile", "compilar"],
-    ["complex", "complexo"],
-    ["copyright", "copyright"],
-    ["credits", "credits"],
-    ["delattr", "delattr"],
-    ["dict", "dicionario"],
-    ["dir", "dir"],
-    ["divmod", "divmod"],
-    ["enumerate", "enumerar"],
-    ["eval", "avaliar"],
-    ["exec", "executar"],
-    ["filter", "filtrar"],
-    ["float", "decimal"],
-    ["format", "formatar"],
-    ["frozenset", "frozenset"],
-    ["getattr", "getattr"],
-    ["globals", "globais"],
-    ["hasattr", "temattr"],
-    ["hash", "hash"],
-    ["help", "ajuda"],
-    ["hex", "hexadecimal"],
-    ["id", "id"],
-    ["input", "entrada"],
-    ["int", "inteiro"],
-    ["isinstance", "instancia"],
-    ["issubclass", "subclasse"],
-    ["iter", "iter"],
-    ["len", "comprimento"],
-    ["license", "license"],
-    ["list", "lista"],
-    ["locals", "locais"],
-    ["map", "mapear"],
-    ["max", "max"],
-    ["memoryview", "memoryview"],
-    ["min", "min"],
-    ["next", "proximo"],
-    ["object", "objeto"],
-    ["oct", "oct"],
-    ["open", "abrir"],
-    ["ord", "ord"],
-    ["pow", "potencia"],
-    ["print", "escrever"],
-    ["property", "property"],
-    ["quit", "encerrar"],
-    ["range", "range"],
-    ["repr", "repr"],
-    ["reversed", "reverso"],
-    ["round", "arredondar"],
-    ["set", "conjunto"],
-    ["setattr", "setattr"],
-    ["slice", "slice"],
-    ["sorted", "ordenado"],
-    ["staticmethod", "staticmethod"],
-    ["str", "caracter"],
-    ["sum", "soma"],
-    ["super", "super"],
-    ["tuple", "tupla"],
-    ["type", "tipo"],
-    ["vars", "vars"],
-    ["zip", "zip"]
-  ]
+    "keyword": [
+        [
+            "True",
+            "Verdadeiro"
+        ],
+        [
+            "False",
+            "Falso"
+        ],
+        [
+            "nonlocal",
+            "semlocal"
+        ],
+        [
+            "continue",
+            "continue"
+        ],
+        [
+            "finally",
+            "porfim"
+        ],
+        [
+            "finally:",
+            "porfim:"
+        ],
+        [
+            "return",
+            "devolva"
+        ],
+        [
+            "except",
+            "deuerro"
+        ],
+        [
+            "import",
+            "importe"
+        ],
+        [
+            "global",
+            "global"
+        ],
+        [
+            "assert",
+            "afirmar"
+        ],
+        [
+            "lambda",
+            "fazer"
+        ],
+        [
+            "class",
+            "classe"
+        ],
+        [
+            "yield",
+            "gerador"
+        ],
+        [
+            "while",
+            "enquanto"
+        ],
+        [
+            "raise",
+            "errar"
+        ],
+        [
+            "break",
+            "quebrar"
+        ],
+        [
+            "elif",
+            "e se"
+        ],
+        [
+            "if",
+            "se"
+        ],
+        [
+            "else",
+            "senao"
+        ],
+        [
+            "else:",
+            "senao:"
+        ],
+        [
+            "from",
+            "de"
+        ],
+        [
+            "None",
+            "Nada"
+        ],
+        [
+            "pass",
+            "passar"
+        ],
+        [
+            "with",
+            "com"
+        ],
+        [
+            "for",
+            "para"
+        ],
+        [
+            "try",
+            "tentar"
+        ],
+        [
+            "try:",
+            "tentar:"
+        ],
+        [
+            "def",
+            "funcao"
+        ],
+        [
+            "not",
+            "nao"
+        ],
+        [
+            "del",
+            "remova"
+        ],
+        [
+            "as",
+            "apelidar"
+        ],
+        [
+            "or",
+            "ou"
+        ],
+        [
+            "in",
+            "em"
+        ],
+        [
+            "and",
+            "e"
+        ],
+        [
+            "is",
+            "é"
+        ]
+    ],
+    "erros": [
+        [
+            "ArithmeticError",
+            "ErroDeAritmetica"
+        ],
+        [
+            "AssertionError",
+            "ErroDeAssercao"
+        ],
+        [
+            "AttributeError",
+            "ErroDeAtributo"
+        ],
+        [
+            "BaseException",
+            "ExcecaoBase"
+        ],
+        [
+            "BlockingIOError",
+            "ErroDeBloqueioIO"
+        ],
+        [
+            "BrokenPipeError",
+            "ErroDeQuebraDePipe"
+        ],
+        [
+            "BufferError",
+            "ErroDeBuffer"
+        ],
+        [
+            "BytesWarning",
+            "AvisoDeBytes"
+        ],
+        [
+            "ChildProcessError",
+            "ErroDeProcessoFilho"
+        ],
+        [
+            "ConnectionAbortedError",
+            "ErroDeConexaoAbortada"
+        ],
+        [
+            "ConnectionError",
+            "ErroDeConexao"
+        ],
+        [
+            "ConnectionRefusedError",
+            "ErroDeConexaoRecusada"
+        ],
+        [
+            "ConnectionResetError",
+            "ErroDeResetDeConexao"
+        ],
+        [
+            "DeprecationWarning",
+            "AvisoDeDepreciacao"
+        ],
+        [
+            "EOFError",
+            "ErroEOF"
+        ],
+        [
+            "Ellipsis",
+            "Elipse"
+        ],
+        [
+            "EnvironmentError",
+            "ErroDeAmbiente"
+        ],
+        [
+            "Exception",
+            "Excecao"
+        ],
+        [
+            "FileExistsError",
+            "ErroDeArquivoExistente"
+        ],
+        [
+            "FileNotFoundError",
+            "ErroDeArquivoNaoEncontrado"
+        ],
+        [
+            "FloatingPointError",
+            "ErroDePontoFlutuante"
+        ],
+        [
+            "FutureWarning",
+            "AvisoDeFuturo"
+        ],
+        [
+            "GeneratorExit",
+            "SaidaDeGerador"
+        ],
+        [
+            "IOError",
+            "ErroIO"
+        ],
+        [
+            "ImportError",
+            "ErroDeImportacao"
+        ],
+        [
+            "ImportWarning",
+            "AvisoDeImportacao"
+        ],
+        [
+            "IndentationError",
+            "ErroDeIndentacao"
+        ],
+        [
+            "IndexError",
+            "ErroDeIndice"
+        ],
+        [
+            "InterruptedError",
+            "ErroDeInterrupcao"
+        ],
+        [
+            "IsADirectoryError",
+            "ErroDeDiretorio"
+        ],
+        [
+            "KeyError",
+            "ErroDeChave"
+        ],
+        [
+            "KeyboardInterrupt",
+            "InterrupcaoDeTeclado"
+        ],
+        [
+            "LookupError",
+            "ErroDePesquisa"
+        ],
+        [
+            "MemoryError",
+            "ErroDeMemoria"
+        ],
+        [
+            "ModuleNotFoundError",
+            "ErroDeModuloNaoEncontrado"
+        ],
+        [
+            "NameError",
+            "ErroDeNome"
+        ],
+        [
+            "NotADirectoryError",
+            "ErroDeNaoDiretorio"
+        ],
+        [
+            "NotImplemented",
+            "NaoImplementado"
+        ],
+        [
+            "NotImplementedError",
+            "ErroDeNaoImplementado"
+        ],
+        [
+            "OSError",
+            "ErroOS"
+        ],
+        [
+            "OverflowError",
+            "ErroDeEstouro"
+        ],
+        [
+            "PendingDeprecationWarning",
+            "AvisoDeDepreciacaoPendente"
+        ],
+        [
+            "PermissionError",
+            "ErroDePermissao"
+        ],
+        [
+            "ProcessLookupError",
+            "ErroDePesquisaDeProcesso"
+        ],
+        [
+            "RecursionError",
+            "ErroDeRecursao"
+        ],
+        [
+            "ReferenceError",
+            "ErroDeReferencia"
+        ],
+        [
+            "ResourceWarning",
+            "AvisoDeRecurso"
+        ],
+        [
+            "RuntimeError",
+            "ErroDeExecucao"
+        ],
+        [
+            "RuntimeWarning",
+            "AvisoDeExecucao"
+        ],
+        [
+            "StopAsyncIteration",
+            "PararIteracaoAssincrona"
+        ],
+        [
+            "StopIteration",
+            "PararIteracao"
+        ],
+        [
+            "SyntaxError",
+            "ErroDeSintaxe"
+        ],
+        [
+            "SyntaxWarning",
+            "AvisoDeSintaxe"
+        ],
+        [
+            "SystemError",
+            "ErroDeSistema"
+        ],
+        [
+            "SystemExit",
+            "SaidaDeSistema"
+        ],
+        [
+            "TabError",
+            "ErroDeTabulacao"
+        ],
+        [
+            "TimeoutError",
+            "ErroDeTimeout"
+        ],
+        [
+            "TypeError",
+            "ErroDeTipo"
+        ],
+        [
+            "UnboundLocalError",
+            "ErroDeVariavelLocalNaoDefinida"
+        ],
+        [
+            "UnicodeDecodeError",
+            "ErroDeDecodificacaoUnicode"
+        ],
+        [
+            "UnicodeEncodeError",
+            "ErroDeCodificacaoUnicode"
+        ],
+        [
+            "UnicodeError",
+            "ErroDeUnicode"
+        ],
+        [
+            "UnicodeTranslateError",
+            "ErroDeTraducaoUnicode"
+        ],
+        [
+            "UnicodeWarning",
+            "AvisoDeUnicode"
+        ],
+        [
+            "UserWarning",
+            "AvisoDeUsuario"
+        ],
+        [
+            "ValueError",
+            "ErroDeValor"
+        ],
+        [
+            "Warning",
+            "Aviso"
+        ],
+        [
+            "WindowsError",
+            "ErroDoWindows"
+        ],
+        [
+            "ZeroDivisionError",
+            "ErroDivisaoZero"
+        ]
+    ],
+    "especiais": [
+        [
+            "null",
+            "vazio"
+        ],
+        [
+            "self",
+            "aquiDentro"
+        ],
+        [
+            "__debug__",
+            "__depuracao__"
+        ],
+        [
+            "__doc__",
+            "__documentacao__"
+        ],
+        [
+            "__import__",
+            "__importar__"
+        ],
+        [
+            "__loader__",
+            "__carregador__"
+        ],
+        [
+            "__name__",
+            "__nome__"
+        ],
+        [
+            "__package__",
+            "__pacote__"
+        ],
+        [
+            "__spec__",
+            "__especificacao__"
+        ],
+        [
+            "__build_class__",
+            "__construir_classe__"
+        ],
+        [
+            "__init__",
+            "__construtor__"
+        ],
+        [
+            "__del__",
+            "__deletor__"
+        ],
+        [
+            "__str__",
+            "__converter_para_string__"
+        ],
+        [
+            "__repr__",
+            "__representacao_textual__"
+        ],
+        [
+            "__len__",
+            "__tamanho__"
+        ],
+        [
+            "__getitem__",
+            "__obter_item__"
+        ],
+        [
+            "__setitem__",
+            "__definir_item__"
+        ],
+        [
+            "__contains__",
+            "__contem__"
+        ],
+        [
+            "__call__",
+            "__chamada__"
+        ],
+        [
+            "__eq__",
+            "__igualdade__"
+        ],
+        [
+            "__lt__",
+            "__menor_que__"
+        ],
+        [
+            "__le__",
+            "__menor_ou_igual_a__"
+        ],
+        [
+            "__gt__",
+            "__maior_que__"
+        ],
+        [
+            "__ge__",
+            "__maior_ou_igual_a__"
+        ],
+        [
+            "__add__",
+            "__adicao__"
+        ],
+        [
+            "__sub__",
+            "__subtracao__"
+        ],
+        [
+            "__mul__",
+            "__multiplicacao__"
+        ],
+        [
+            "__div__",
+            "__divisao__"
+        ],
+        [
+            "__enter__",
+            "__iniciar_contexto__"
+        ],
+        [
+            "__exit__",
+            "__finalizar_contexto__"
+        ],
+        [
+            "__iter__",
+            "__iterador__"
+        ],
+        [
+            "__next__",
+            "__proximo__"
+        ],
+        [
+            "__getattr__",
+            "__obter_atributo__"
+        ],
+        [
+            "__setattr__",
+            "__definir_atributo__"
+        ],
+        [
+            "__delattr__",
+            "__deletar_atributo__"
+        ],
+        [
+            "__hash__",
+            "__hash__"
+        ],
+        [
+            "__delitem__",
+            "__deletar_item__"
+        ],
+        [
+            "__setitem__",
+            "__definir_item__"
+        ],
+        [
+            "__getitem__",
+            "__obter_item__"
+        ],
+        [
+            "__enter__",
+            "__iniciar_contexto__"
+        ],
+        [
+            "__exit__",
+            "__finalizar_contexto__"
+        ]
+    ],
+    "listas": [
+        [
+            "append",
+            "acrescentar"
+        ],
+        [
+            "extend",
+            "estender"
+        ],
+        [
+            "insert",
+            "inserir"
+        ],
+        [
+            "remove",
+            "remover"
+        ],
+        [
+            "pop",
+            "retirar"
+        ],
+        [
+            "clear",
+            "limpar"
+        ],
+        [
+            "index",
+            "indice"
+        ],
+        [
+            "count",
+            "contar"
+        ],
+        [
+            "sort",
+            "organizar"
+        ],
+        [
+            "reverse",
+            "reverter"
+        ],
+        [
+            "copy",
+            "copia"
+        ]
+    ],
+    "string": [
+        [
+            "capitalize",
+            "capitalizar"
+        ],
+        [
+            "lower",
+            "minuscula"
+        ],
+        [
+            "upper",
+            "maiuscula"
+        ],
+        [
+            "title",
+            "titulo"
+        ],
+        [
+            "strip",
+            "remover_espacos"
+        ],
+        [
+            "lstrip",
+            "lremover_espacos"
+        ],
+        [
+            "rstrip",
+            "rremover_espacos"
+        ],
+        [
+            "replace",
+            "substituir"
+        ],
+        [
+            "split",
+            "dividir"
+        ],
+        [
+            "join",
+            "juntar"
+        ],
+        [
+            "find",
+            "encontrar"
+        ],
+        [
+            "count",
+            "contar"
+        ],
+        [
+            "startswith",
+            "comeca_com"
+        ],
+        [
+            "endswith",
+            "termina_com"
+        ],
+        [
+            "isalpha",
+            "e_alfabetica"
+        ],
+        [
+            "isdigit",
+            "e_numerica"
+        ]
+    ],
+    "embutidas": [
+        [
+            "abs",
+            "abs"
+        ],
+        [
+            "all",
+            "todos"
+        ],
+        [
+            "any",
+            "algum"
+        ],
+        [
+            "ascii",
+            "ascii"
+        ],
+        [
+            "bin",
+            "binario"
+        ],
+        [
+            "bool",
+            "logico"
+        ],
+        [
+            "breakpoint",
+            "breakpoint"
+        ],
+        [
+            "bytearray",
+            "bytearray"
+        ],
+        [
+            "bytes",
+            "bytes"
+        ],
+        [
+            "callable",
+            "chamavel"
+        ],
+        [
+            "chr",
+            "chr"
+        ],
+        [
+            "classmethod",
+            "classmethod"
+        ],
+        [
+            "compile",
+            "compilar"
+        ],
+        [
+            "complex",
+            "complexo"
+        ],
+        [
+            "copyright",
+            "copyright"
+        ],
+        [
+            "credits",
+            "credits"
+        ],
+        [
+            "delattr",
+            "delattr"
+        ],
+        [
+            "dict",
+            "dicionario"
+        ],
+        [
+            "dir",
+            "dir"
+        ],
+        [
+            "divmod",
+            "divmod"
+        ],
+        [
+            "enumerate",
+            "enumerar"
+        ],
+        [
+            "eval",
+            "avaliar"
+        ],
+        [
+            "exec",
+            "executar"
+        ],
+        [
+            "filter",
+            "filtrar"
+        ],
+        [
+            "float",
+            "decimal"
+        ],
+        [
+            "format",
+            "formatar"
+        ],
+        [
+            "frozenset",
+            "frozenset"
+        ],
+        [
+            "getattr",
+            "getattr"
+        ],
+        [
+            "globals",
+            "globais"
+        ],
+        [
+            "hasattr",
+            "temattr"
+        ],
+        [
+            "hash",
+            "hash"
+        ],
+        [
+            "help",
+            "ajuda"
+        ],
+        [
+            "hex",
+            "hexadecimal"
+        ],
+        [
+            "id",
+            "id"
+        ],
+        [
+            "input",
+            "entrada"
+        ],
+        [
+            "int",
+            "inteiro"
+        ],
+        [
+            "isinstance",
+            "instancia"
+        ],
+        [
+            "issubclass",
+            "subclasse"
+        ],
+        [
+            "iter",
+            "iter"
+        ],
+        [
+            "len",
+            "comprimento"
+        ],
+        [
+            "license",
+            "license"
+        ],
+        [
+            "list",
+            "lista"
+        ],
+        [
+            "locals",
+            "locais"
+        ],
+        [
+            "map",
+            "mapear"
+        ],
+        [
+            "max",
+            "max"
+        ],
+        [
+            "memoryview",
+            "memoryview"
+        ],
+        [
+            "min",
+            "min"
+        ],
+        [
+            "next",
+            "proximo"
+        ],
+        [
+            "object",
+            "objeto"
+        ],
+        [
+            "oct",
+            "oct"
+        ],
+        [
+            "open",
+            "abrir"
+        ],
+        [
+            "ord",
+            "ord"
+        ],
+        [
+            "pow",
+            "potencia"
+        ],
+        [
+            "print",
+            "escrever"
+        ],
+        [
+            "property",
+            "property"
+        ],
+        [
+            "quit",
+            "encerrar"
+        ],
+        [
+            "range",
+            "range"
+        ],
+        [
+            "repr",
+            "repr"
+        ],
+        [
+            "reversed",
+            "reverso"
+        ],
+        [
+            "round",
+            "arredondar"
+        ],
+        [
+            "set",
+            "conjunto"
+        ],
+        [
+            "setattr",
+            "setattr"
+        ],
+        [
+            "slice",
+            "slice"
+        ],
+        [
+            "sorted",
+            "ordenado"
+        ],
+        [
+            "staticmethod",
+            "staticmethod"
+        ],
+        [
+            "str",
+            "caracter"
+        ],
+        [
+            "sum",
+            "soma"
+        ],
+        [
+            "super",
+            "super"
+        ],
+        [
+            "tuple",
+            "tupla"
+        ],
+        [
+            "type",
+            "tipo"
+        ],
+        [
+            "vars",
+            "vars"
+        ],
+        [
+            "zip",
+            "zip"
+        ]
+    ]
 }
