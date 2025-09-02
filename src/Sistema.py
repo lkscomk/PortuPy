@@ -24,7 +24,7 @@ class Sistema:
     def criar_local_app(self):
         print('Classe:Sistema - criar_local_app')
         try: 
-            base_dir = os.path.expanduser(r"~\AppData\Loyal\Pryograms")
+            base_dir = os.path.expanduser(r"~\AppData\Local\Pryograms")
             os.makedirs(base_dir, exist_ok=True)
             return base_dir
         except:

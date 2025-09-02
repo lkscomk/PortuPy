@@ -7,9 +7,8 @@ from Run import Maquina
 import webbrowser
 import sys
 from tkinter import filedialog
-from tkinter import messagebox
-from ttkbootstrap.dialogs import Messagebox
 import base64
+import CaixaDialogo
 
 class App:
     def __init__(self, master=None):
@@ -195,14 +194,12 @@ class App:
     def perguntar_salvar(self, event=None):
         print('Classe:App - perguntar_salvar')
         if not self.arquivoSalvo:
-            resposta = Messagebox.yesno(
-                message="Salvar Alterações?", title="Atenção",
-            parent=self.tela)
-            if resposta == 'No':
-                return
-            elif resposta:
+            resposta = CaixaDialogo.CustomDialog(self.tela, title="Confirmação", message="Deseja salvar alterações?",
+                       icon=self.icon, dialog_type="yesno").show()
+            if resposta == 'Yes':
                 self.salvar_em_arquivo()
-            self.abrir_arquivo()
+            elif resposta == 'No':
+                return
         else:
             self.abrir_arquivo()
 
@@ -222,14 +219,12 @@ class App:
     def fechar_janela(self):
         print('Classe:App - fechar_janela')
         if not self.arquivoSalvo:
-            resposta = Messagebox.yesno(
-                message="Salvar Alterações?", title="Atenção",
-            parent_window=self.tela)
+            resposta = CaixaDialogo.CustomDialog(self.tela, title="Confirmação", message="Deseja salvar alterações?",
+                       icon=self.icon, dialog_type="yesno").show()
             if resposta == 'Yes':
-                return
-            elif resposta:
                 self.salvar_em_arquivo()
-            self.tela.destroy()
+            elif resposta == 'No':
+                self.tela.destroy()
         else:
             self.tela.destroy()
 
@@ -241,8 +236,8 @@ class App:
         if mensagem and mensagem[0] == 'erro':
             if len(mensagem) >= 3:
                 self.editor.add_underline(mensagem[2])
-            Messagebox.show_error('Ops... Algum Problema foi encontrado!', mensagem[1],
-            parent=self.tela)
+            CaixaDialogo.CustomDialog(self.tela, title="Erro", message="Ops... Algum Problema foi encontrado!",
+                       icon=self.icon, dialog_type="error").show()
 
     def organizar_cores(self):
         print('Classe:App - organizar_cores')
